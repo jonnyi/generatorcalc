@@ -1,0 +1,2 @@
+# generatorcalc
+Generator Calculator
