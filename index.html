@@ -11,34 +11,27 @@
 				<div class="appliance-selector">
 					<div class="category-selector">
 						<p>Appliance type</p>
-						<a>Show all</a>
-						<a>Home</a>
-						<a>Work</a>
-						<a>Leisure</a>
+						<a data-show="all">Show all</a>
+						<a data-show="home">Home</a>
+						<a data-show="work">Work</a>
+						<a data-show="leisure">Leisure</a>
 					</div>
-					<ul>
-						<li id="item_1" class="home">Phone charger</li>
-						<li id="item_2" class="home">Tumble dryer</li>
-						<li id="item_3" class="work">Drill</li>
-						<li id="item_4" class="home">Tevevision</li>
-						<li id="item_5" class="home">Laptop</li>
-					</ul>
+					<ul class="item-list"></ul>
 					<div class="custom">
-					<form>
-						<input type="text" name="" id="quick-name" placeholder="Name">
-						<input type="text" name="" id="wattage-running" placeholder="Wattage">
-						<input type="text" name="" id="wattage-starting" placeholder="Starting Wattage if difforent">
-						<a>Add item</a>
-					</form>
+						<form id="manual-form" action="">
+							<input type="text" name="quick-name" id="quick-name" placeholder="Add a name" required>
+							<input type="number" name="quantity" id="quantity" placeholder="Quantity" min="1" max="20" value="1" required>
+							<input type="number" name="wattage-running" id="wattage-running" placeholder="Wattage" max="20000">
+							<input type="number" name="wattage-starting" id="wattage-starting" placeholder="Starting Wattage if difforent" max="20000">
+							<input type="submit" value="Add item">
+						</form>
 					</div>
 				</div>
 				<div class="loadout">
-					//Stuff they wanna power
-					<table>
-						<!-- Row [NAME] [QTY] [WATTAGE] [STARTING WATTAGE] -->
-					</table>
-					<div><p>Recommended Wattage</p></div>
-					<div><p>Estimated running cost per hour</p></div>
+					<table id="results-table"></table>
+					<div><p>Recommended Wattage <span id="recommended-wattage"></span></p></div>
+					<div><p>Maximum Wattage <span id="maximum-wattage"></span></p></div>
+					<!--<div><p>Estimated running cost per hour: XXX</p></div>-->
 				</div>
 			</div>
 		</div>

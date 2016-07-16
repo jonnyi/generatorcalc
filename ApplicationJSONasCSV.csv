@@ -1,0 +1,64 @@
+id,name,runningwattage,startingwattage,category,icon
+item_1,Air Compressor,1600,4500,work,na
+item_2,Bench Grinder (8 in.),1400,2500,work,na
+item_3,"Circular Saw (Heavy Duty, 7 1/4 in.)",1400,2300,work,na
+item_4,Concrete Vibrator,840,840,work,na
+item_5,Demolition hammer,1260,1260,work,na
+item_6,Drain cleaner,250,250,work,na
+item_7,Drills,880,1200,work,na
+item_8,"Electric Chain Saw (14 inches, 2 hp)",1100,1100,work,na
+item_9,Hand Drill (1/2 in.),600,900,work,na
+item_10,High-pressure Washer (1 hp),1200,3600,work,na
+item_11,Rotary hammer,0,1200,work,na
+item_12,Table Saw (10 in.),1800,4500,work,na
+item_13,"Industrial Motors, Split Phase",275,1200,work,na
+item_14,"Industrial Motors, Capacitor Start Induction Run",275,850,work,na
+item_15,"Industrial Motors, Capacitor Start Capacitor Run",275,600,work,na
+item_16,"Industrial Motors, Fan Duty",650,1200,work,na
+item_17,"Electric Fence, 25 miles",250,250,work,na
+item_18,Milk Cooler,1100,1800,work,na
+item_19,"Milker (vacuum pump, 2hp)",1000,2300,work,na
+item_20,"Portable Heater (kerosene, diesel fuel)",400,600,work,na
+item_21,Battery Charger,380,380,work,na
+item_22,Electric Welder,9000,9000,work,na
+item_23,Refrigerator or Freezer (Energy Star),192,1200,home,na
+item_24,Microwave Oven,1000,1000,home,na
+item_25,Incandescent Lights,60,60,home,na
+item_26,"Furnace Fan, gas or fuel oil",300,500,home,na
+item_27,Television,300,300,home,na
+item_28,Coffee Maker,600,600,home,na
+item_29,Dishwasher (Cool Dry),216,540,home,na
+item_30,Electric Fry Pan,1500,1500,home,na
+item_31,Electric Range (8-inch element),2100,2100,home,na
+item_32,Automatic Washer,1200,1200,home,na
+item_33,Clothes Dryer (Electric),5400,6750,home,na
+item_34,Radio,200,200,home,na
+item_35,Sump Pump,800,1300,home,na
+item_36,"Air Conditioner (10,000 BTU)",1500,2200,home,na
+item_37,Computer,250,250,home,na
+item_38,Monitor (LCD style),30,30,home,na
+item_39,Printer,600,600,home,na
+item_40,Hot Water Heater,4500,4500,home,na
+item_41,Garage Door Opener,720,1420,home,na
+item_42,DVD Player,350,350,home,na
+item_43,Microwave Oven,1000,1000,leisure,na
+item_44,Incandescent Lights,60,60,leisure,na
+item_45,Television,300,300,leisure,na
+item_46,Coffee Maker,600,600,leisure,na
+item_47,Electric Fry Pan,1500,1500,leisure,na
+item_48,Radio,200,200,leisure,na
+item_49,"Air Conditioner (10,000 BTU)",1500,2200,leisure,na
+item_50,Computer,250,250,leisure,na
+item_51,Monitor (LCD style),30,30,leisure,na
+item_52,Printer,600,600,leisure,na
+item_53,RV Air Conditioner,1010,1600,leisure,na
+item_54,RV Refrigerator,180,600,leisure,na
+item_55,Blender,400,850,leisure,na
+item_56,Electric Grill,1650,1650,leisure,na
+item_57,Slow Cooker,270,270,leisure,na
+item_58,Hair Dryer,1800,1900,leisure,na
+item_59,Radiant Heater,1300,1300,leisure,na
+item_60,Satelite Receiver,250,250,leisure,na
+item_61,Two-Way Radio,360,360,leisure,na
+item_62,Fan (portable),40,120,leisure,na
+item_63,DVD Player,350,350,leisure,na

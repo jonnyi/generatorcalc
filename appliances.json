@@ -1,26 +1,506 @@
 [
-	{
-		"id": 1,
-		"name": "Phone charger",
-		"running-wattage": 120,
-		"starting-wattage": 120,
-		"category": "home",
-		"icon": "na"
-	}, 
-	{
-		"id": 2,
-		"name": "Air compressor",
-		"running-wattage": 400,
-		"starting-wattage": 520,
-		"category": "work",
-		"icon": "na"
-	},
-	{
-		"id": 3,
-		"name": "Hot plate",
-		"running-wattage": 400,
-		"starting-wattage": 400,
-		"category": "leisure",
-		"icon": "na"
-	}
+  {
+    "id": "item_1",
+    "name": "Air Compressor",
+    "runningwattage": 1600,
+    "startingwattage": 4500,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_2",
+    "name": "Bench Grinder (8 in.)",
+    "runningwattage": 1400,
+    "startingwattage": 2500,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_3",
+    "name": "Circular Saw (Heavy Duty, 7 1/4 in.)",
+    "runningwattage": 1400,
+    "startingwattage": 2300,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_4",
+    "name": "Concrete Vibrator",
+    "runningwattage": 840,
+    "startingwattage": 840,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_5",
+    "name": "Demolition hammer",
+    "runningwattage": 1260,
+    "startingwattage": 1260,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_6",
+    "name": "Drain cleaner",
+    "runningwattage": 250,
+    "startingwattage": 250,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_7",
+    "name": "Drills",
+    "runningwattage": 880,
+    "startingwattage": 1200,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_8",
+    "name": "Electric Chain Saw (14 inches, 2 hp)",
+    "runningwattage": 1100,
+    "startingwattage": 1100,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_9",
+    "name": "Hand Drill (1/2 in.)",
+    "runningwattage": 600,
+    "startingwattage": 900,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_10",
+    "name": "High-pressure Washer (1 hp)",
+    "runningwattage": 1200,
+    "startingwattage": 3600,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_11",
+    "name": "Rotary hammer",
+    "runningwattage": 0,
+    "startingwattage": 1200,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_12",
+    "name": "Table Saw (10 in.)",
+    "runningwattage": 1800,
+    "startingwattage": 4500,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_13",
+    "name": "Industrial Motors, Split Phase",
+    "runningwattage": 275,
+    "startingwattage": 1200,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_14",
+    "name": "Industrial Motors, Capacitor Start Induction Run",
+    "runningwattage": 275,
+    "startingwattage": 850,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_15",
+    "name": "Industrial Motors, Capacitor Start Capacitor Run",
+    "runningwattage": 275,
+    "startingwattage": 600,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_16",
+    "name": "Industrial Motors, Fan Duty",
+    "runningwattage": 650,
+    "startingwattage": 1200,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_17",
+    "name": "Electric Fence, 25 miles",
+    "runningwattage": 250,
+    "startingwattage": 250,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_18",
+    "name": "Milk Cooler",
+    "runningwattage": 1100,
+    "startingwattage": 1800,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_19",
+    "name": "Milker (vacuum pump, 2hp)",
+    "runningwattage": 1000,
+    "startingwattage": 2300,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_20",
+    "name": "Portable Heater (kerosene, diesel fuel)",
+    "runningwattage": 400,
+    "startingwattage": 600,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_21",
+    "name": "Battery Charger",
+    "runningwattage": 380,
+    "startingwattage": 380,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_22",
+    "name": "Electric Welder",
+    "runningwattage": 9000,
+    "startingwattage": 9000,
+    "category": "work",
+    "icon": "na"
+  },
+  {
+    "id": "item_23",
+    "name": "Refrigerator or Freezer (Energy Star)",
+    "runningwattage": 192,
+    "startingwattage": 1200,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_24",
+    "name": "Microwave Oven",
+    "runningwattage": 1000,
+    "startingwattage": 1000,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_25",
+    "name": "Incandescent Lights",
+    "runningwattage": 60,
+    "startingwattage": 60,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_26",
+    "name": "Furnace Fan, gas or fuel oil",
+    "runningwattage": 300,
+    "startingwattage": 500,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_27",
+    "name": "Television",
+    "runningwattage": 300,
+    "startingwattage": 300,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_28",
+    "name": "Coffee Maker",
+    "runningwattage": 600,
+    "startingwattage": 600,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_29",
+    "name": "Dishwasher (Cool Dry)",
+    "runningwattage": 216,
+    "startingwattage": 540,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_30",
+    "name": "Electric Fry Pan",
+    "runningwattage": 1500,
+    "startingwattage": 1500,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_31",
+    "name": "Electric Range (8-inch element)",
+    "runningwattage": 2100,
+    "startingwattage": 2100,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_32",
+    "name": "Automatic Washer",
+    "runningwattage": 1200,
+    "startingwattage": 1200,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_33",
+    "name": "Clothes Dryer (Electric)",
+    "runningwattage": 5400,
+    "startingwattage": 6750,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_34",
+    "name": "Radio",
+    "runningwattage": 200,
+    "startingwattage": 200,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_35",
+    "name": "Sump Pump",
+    "runningwattage": 800,
+    "startingwattage": 1300,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_36",
+    "name": "Air Conditioner (10,000 BTU)",
+    "runningwattage": 1500,
+    "startingwattage": 2200,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_37",
+    "name": "Computer",
+    "runningwattage": 250,
+    "startingwattage": 250,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_38",
+    "name": "Monitor (LCD style)",
+    "runningwattage": 30,
+    "startingwattage": 30,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_39",
+    "name": "Printer",
+    "runningwattage": 600,
+    "startingwattage": 600,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_40",
+    "name": "Hot Water Heater",
+    "runningwattage": 4500,
+    "startingwattage": 4500,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_41",
+    "name": "Garage Door Opener",
+    "runningwattage": 720,
+    "startingwattage": 1420,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_42",
+    "name": "DVD Player",
+    "runningwattage": 350,
+    "startingwattage": 350,
+    "category": "home",
+    "icon": "na"
+  },
+  {
+    "id": "item_43",
+    "name": "Microwave Oven",
+    "runningwattage": 1000,
+    "startingwattage": 1000,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_44",
+    "name": "Incandescent Lights",
+    "runningwattage": 60,
+    "startingwattage": 60,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_45",
+    "name": "Television",
+    "runningwattage": 300,
+    "startingwattage": 300,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_46",
+    "name": "Coffee Maker",
+    "runningwattage": 600,
+    "startingwattage": 600,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_47",
+    "name": "Electric Fry Pan",
+    "runningwattage": 1500,
+    "startingwattage": 1500,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_48",
+    "name": "Radio",
+    "runningwattage": 200,
+    "startingwattage": 200,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_49",
+    "name": "Air Conditioner (10,000 BTU)",
+    "runningwattage": 1500,
+    "startingwattage": 2200,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_50",
+    "name": "Computer",
+    "runningwattage": 250,
+    "startingwattage": 250,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_51",
+    "name": "Monitor (LCD style)",
+    "runningwattage": 30,
+    "startingwattage": 30,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_52",
+    "name": "Printer",
+    "runningwattage": 600,
+    "startingwattage": 600,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_53",
+    "name": "RV Air Conditioner",
+    "runningwattage": 1010,
+    "startingwattage": 1600,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_54",
+    "name": "RV Refrigerator",
+    "runningwattage": 180,
+    "startingwattage": 600,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_55",
+    "name": "Blender",
+    "runningwattage": 400,
+    "startingwattage": 850,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_56",
+    "name": "Electric Grill",
+    "runningwattage": 1650,
+    "startingwattage": 1650,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_57",
+    "name": "Slow Cooker",
+    "runningwattage": 270,
+    "startingwattage": 270,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_58",
+    "name": "Hair Dryer",
+    "runningwattage": 1800,
+    "startingwattage": 1900,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_59",
+    "name": "Radiant Heater",
+    "runningwattage": 1300,
+    "startingwattage": 1300,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_60",
+    "name": "Satelite Receiver",
+    "runningwattage": 250,
+    "startingwattage": 250,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_61",
+    "name": "Two-Way Radio",
+    "runningwattage": 360,
+    "startingwattage": 360,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_62",
+    "name": "Fan (portable)",
+    "runningwattage": 40,
+    "startingwattage": 120,
+    "category": "leisure",
+    "icon": "na"
+  },
+  {
+    "id": "item_63",
+    "name": "DVD Player",
+    "runningwattage": 350,
+    "startingwattage": 350,
+    "category": "leisure",
+    "icon": "na"
+  }
 ]
