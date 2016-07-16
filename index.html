@@ -1,1 +1,46 @@
-<h1>Test heading</h1>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css" charset="utf-8">
+	</head>
+	<body>
+		<div class="page_wrapper">
+			<div class="header">Generator Calculator</div>
+			<div class="content">
+				<div class="appliance-selector">
+					<div class="category-selector">
+						<p>Appliance type</p>
+						<a>Show all</a>
+						<a>Home</a>
+						<a>Work</a>
+						<a>Leisure</a>
+					</div>
+					<ul>
+						<li id="item_1" class="home">Phone charger</li>
+						<li id="item_2" class="home">Tumble dryer</li>
+						<li id="item_3" class="work">Drill</li>
+						<li id="item_4" class="home">Tevevision</li>
+						<li id="item_5" class="home">Laptop</li>
+					</ul>
+					<div class="custom">
+					<form>
+						<input type="text" name="" id="quick-name" placeholder="Name">
+						<input type="text" name="" id="wattage-running" placeholder="Wattage">
+						<input type="text" name="" id="wattage-starting" placeholder="Starting Wattage if difforent">
+						<a>Add item</a>
+					</form>
+					</div>
+				</div>
+				<div class="loadout">
+					//Stuff they wanna power
+					<table>
+						<!-- Row [NAME] [QTY] [WATTAGE] [STARTING WATTAGE] -->
+					</table>
+					<div><p>Recommended Wattage</p></div>
+					<div><p>Estimated running cost per hour</p></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
