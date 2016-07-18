@@ -3,35 +3,64 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles.css" charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,100" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div class="page_wrapper">
 			<div class="header">Generator Calculator</div>
 			<div class="content">
+				<div class="hero-content">
+					<h1>Generator Calculator</h1>
+					<p>Generator calculator helps you determine your electrical power needs for recreation, construction, home backup, and emergency use.</p>
+				</div>
 				<div class="appliance-selector">
 					<div class="category-selector">
-						<p>Appliance type</p>
-						<a data-show="all">Show all</a>
-						<a data-show="home">Home</a>
-						<a data-show="work">Work</a>
-						<a data-show="leisure">Leisure</a>
+						<a href="javascript:void(0)" data-show="home" class="selected">Home</a>
+						<a href="javascript:void(0)"  data-show="work">Work</a>
+						<a href="javascript:void(0)"  data-show="leisure">Leisure</a>
 					</div>
-					<ul class="item-list"></ul>
-					<div class="custom">
-						<form id="manual-form" action="">
-							<input type="text" name="quick-name" id="quick-name" placeholder="Add a name" required>
-							<input type="number" name="quantity" id="quantity" placeholder="Quantity" min="1" max="20" value="1" required>
-							<input type="number" name="wattage-running" id="wattage-running" placeholder="Wattage" max="20000">
-							<input type="number" name="wattage-starting" id="wattage-starting" placeholder="Starting Wattage if difforent" max="20000">
-							<input type="submit" value="Add item">
-						</form>
+					<div class="item-selector">
+						<ul class="item-list"></ul>
+						<div class="custom">
+							<h3>Add custom appliance:</h3>
+							<form id="manual-form" action="">
+								<input type="text" name="quick-name" id="quick-name" placeholder="Add a name" required>
+								<input type="number" name="quantity" id="quantity" placeholder="Quantity" min="1" max="20" value="1" required>
+								<input type="number" name="wattage-running" id="wattage-running" placeholder="Wattage" max="20000">
+								<input type="number" name="wattage-starting" id="wattage-starting" placeholder="Starting Wattage" max="20000">
+								<input type="submit" value="Add item">
+							</form>
+						</div>
 					</div>
 				</div>
 				<div class="loadout">
 					<table id="results-table"></table>
-					<div><p>Recommended Wattage <span id="recommended-wattage"></span></p></div>
-					<div><p>Maximum Wattage <span id="maximum-wattage"></span></p></div>
+
+				</div>
+				<div class="recommendations">
+					<div class="rec-wattage">
+						<p>Recommended Wattage</p> 
+						<p class="result"><span id="recommended-wattage"></span>watt</p>
+					</div>
+					<div class="rec-max"><p>Maximum Wattage: <span id="maximum-wattage"></span>watt</p></div>
 					<!--<div><p>Estimated running cost per hour: XXX</p></div>-->
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="footer-content">
+					<div class="about">
+						<h4 class="">
+							About Generator Calculator
+						</h4>
+						<p>Use Generator Calculator to make more informed decisions before purchasing a genertor based on your own specific power needs. Start by simply browsing and selecting the appliances you would like to power and view the resulting power wattage you will need to sustain those appliances.</p>
+						<p>Appliances are divided into categories of home, work and leisure for easier browsing however you are able to mix and match all appliances</p>
+						<p>If you would like to make improvment suggestions or have question about generator calculator please e-mail <a href="mailto:jonnyirving@gmail.com">jonnyirving@gmail.com</a></p>
+					</div>
+					<div class="disclaimer">
+						<p>Disclaimer: Although this tool is designed to act as a guide please ensure that you contact the manufactorer of your chosen generator if you have any doubts. Overloading your generator can cause both it and your appliances damage.</p>
+						<p>&copy; Generator Calculator 2016</p>
+					</div>
 				</div>
 			</div>
 		</div>

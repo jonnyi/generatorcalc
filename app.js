@@ -49,10 +49,13 @@ $(document).ready(function(){
 		});
     });
 	
-	//Filter list onclick events to hide/ show list items based on their class
+	//Filter list onclick events to hide / show list items based on their class
 	$(".appliance-selector .category-selector a").click(function() {
 		var classToShow = $(this).attr("data-show");
+		$(".appliance-selector .category-selector a").removeClass("selected");
+		$(this).addClass("selected");
 		$(".appliance-selector .item-list li" ).hide();
+
 		if($( ".appliance-selector .item-list li." + classToShow).length != 0){
 			$( ".appliance-selector .item-list li." + classToShow).show();	
 		} else {
@@ -88,7 +91,8 @@ function updateResults(){
 	var recommendedWattage = 0;
 
 	$("#results-table").empty();
-
+	$(".loadout, .recommendations").show();
+	
 	if(selectedAppliances.length > 0){
 		$.each(selectedAppliances, function(index, currentAppliance) {
 			totalRunningWattage = totalRunningWattage + (currentAppliance.runningwattage * currentAppliance.quantity);
@@ -102,13 +106,16 @@ function updateResults(){
 		recommendedWattage = ((totalRunningWattage - (highWattObj.runningwattage * highWattObj.quantity)) + (highWattObj.startingwattage * highWattObj.quantity));
 
 		//Render results
-		$('#results-table').append("<tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th>Remove</th></tr>");
+		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th>Remove</th></tr></thead><tbody>");
 		$.each(selectedAppliances, function(index, value) {
-			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td><a data-removeid='" + value.id + "' class='remove-appliance'>X</a></td></tr>");
+			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td class='center'><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'>X</a></td></tr>");
 		});
-		$('#results-table').append( "<tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th></tr>");
+		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th></th></tr></tfoot>");
 		$("#recommended-wattage").html(recommendedWattage);
 		$("#maximum-wattage").html(totalStartingWattage);
+	} else {
+		$(".loadout, .recommendations").hide();
+		$("body").animate({ scrollTop: 0 }, "slow");
 	}
 }
 
@@ -123,6 +130,8 @@ function addManual(){
 		"category": "all",
 		"icon": "na"
 	}
+	$("#quantity").val(1);
+	$("#quick-name, #wattage-running, #wattage-starting").val("");
 	selectedAppliances.push(appObject);
 	updateResults();
 }
