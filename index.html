@@ -4,6 +4,7 @@
 		<script type="text/javascript" src="app.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles.css" charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,100" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
 		<div class="page_wrapper">
@@ -15,9 +16,9 @@
 				</div>
 				<div class="appliance-selector">
 					<div class="category-selector">
-						<a href="javascript:void(0)" data-show="home" class="selected">Home</a>
-						<a href="javascript:void(0)"  data-show="work">Work</a>
-						<a href="javascript:void(0)"  data-show="leisure">Leisure</a>
+						<a href="javascript:void(0)" data-show="home" class="home selected">Home</a>
+						<a href="javascript:void(0)"  data-show="work" class="work">Work</a>
+						<a href="javascript:void(0)"  data-show="leisure" class="leisure">Leisure</a>
 					</div>
 					<div class="item-selector">
 						<ul class="item-list"></ul>
@@ -64,5 +65,13 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-81002642-1', 'auto');
+			ga('send', 'pageview');
+		</script>
 	</body>
 </html>

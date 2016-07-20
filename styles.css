@@ -9,6 +9,13 @@ body{
 
 }
 
+@font-face {
+	font-family: 'ElegantIcons';
+		url('/fonts/ElegantIcons.woff') format('truetype'),
+	font-weight: normal;
+	font-style: normal;
+}
+
 body,h1,html, input {
     font-family: Raleway,sans-serif
 }
@@ -44,7 +51,6 @@ h1 {
     width: 80%;
     margin: 0 auto;
     padding: 30px 0 0 0;
-    overflow: hidden;
 }
 
 .footer-content a{
@@ -52,7 +58,7 @@ h1 {
 }
 
 .hero-content{margin: 0 0 40px 0}
-.hero-content p {margin: 0 240px;text-align: center;}
+.hero-content p {margin: 0 25%;text-align: center;}
 
 .appliance-selector{
     margin: 0 0 25px 0;
@@ -61,36 +67,55 @@ h1 {
 .appliance-selector .category-selector a{
     border: 1px solid #cbcbcb;
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px 28px 5px 10px;
     text-align: left;
     color: #0a0a0a;
     text-decoration: inherit;
+    position: relative;
 }
+.appliance-selector .category-selector a:after{font-family: 'Material Icons';font-weight: normal;font-style: normal;font-size: 18px;line-height: 24px;letter-spacing: normal;text-transform: none;display: inline-block;white-space: nowrap;word-wrap: normal;direction: ltr;-webkit-font-feature-settings: 'liga';-webkit-font-smoothing: antialiased;position: absolute;right: 5px;color: #8e8e8e;}
+.appliance-selector .category-selector a.work:after{content: "build";font-size: 16px;}
+.appliance-selector .category-selector a.home:after{content: "home";}
+.appliance-selector .category-selector a.leisure:after{content: "airport_shuttle";}
 .appliance-selector .category-selector a:hover{font-weight:700;}
-.appliance-selector .category-selector a.selected{font-weight:700; border-bottom-color: #fefefe; cursor:default;}
+.appliance-selector .category-selector a.selected{font-weight:700;border-bottom-color: #fefefe;cursor:default;z-index: 1000;}
 
-.appliance-selector .item-selector{padding: 10px;overflow: hidden;margin-top: -1px;border: 1px solid #cbcbcb;}
-.appliance-selector .item-selector ul{margin:0; padding:0}
+.appliance-selector .category-selector a.selected:after, 
+.appliance-selector .category-selector a:hover:after{color: #0a0a0a; }
+
+
+.appliance-selector .item-selector{margin-top: -1px;border: 1px solid #cbcbcb;display: inline-block;}
+.appliance-selector .item-selector ul{
+    margin: 10px;
+    padding:0;
+}
 .appliance-selector .item-selector ul.item-list li{
     list-style-type: none;
     margin: 3px 5px 0 0;
     border: 1px solid #efefef;
-    width: 23.5%;
+    width: 24.2%;
+    position: relative;
+    float: left;
     height: 24px;
-    float:left;
+}
+.appliance-selector  ul.item-list li:hover{cursor: pointer;}
+.appliance-selector  ul.item-list li:hover:after{content:"+";height: 24px;width: 24px;line-height: 24px;text-align: center;font-size: 35px;font-family: Raleway,sans-serif;background-color: #eaeaea;color: #827f7f;position: absolute;right: 0;}
+
+.appliance-selector .item-selector ul.item-list li span{
     line-height: 24px;
     padding: 0 0 0 8px;
     font-size: 11px;
 }
-.appliance-selector  ul.item-list li:hover{cursor: pointer;}
-.appliance-selector  ul.item-list li:hover:after{content:"+";float: right;height: 24px;width: 24px;line-height: 24px;text-align: center;font-size: 35px;font-family: Raleway,sans-serif;background-color: #eaeaea;color: #827f7f;}
 
+.appliance-selector  ul.item-list li:hover .more-info{background-color: #eaeaea;width: 100px;position: absolute;right: -115px;top: -12px;z-index: 1000;height: 40px;line-height: 20px;padding: 5px 5px 5px 10px;border-radius: 3px;display: inline-block;}
+.appliance-selector  ul.item-list li .counter{position:absolute; right: 35px; font-weight:700;}
+.appliance-selector  ul.item-list li .more-info{display:none;}
 .appliance-selector  ul.item-list li.work,
 .appliance-selector  ul.item-list li.leisure{
     display: none;
 }
 
-.appliance-selector .item-selector .custom {float:left; clear:left;}
+.appliance-selector .item-selector .custom {float:left;clear:left;margin: 10px;}
 .appliance-selector .item-selector .custom h3{margin: 10px 0 3px 3px;display: inline-block;font-size: 12px;}
 .appliance-selector .item-selector .custom #manual-form{
     margin: 0;
@@ -197,4 +222,32 @@ tbody tr:nth-child(even) {
     font-size: 12px;
     text-align: center;
     color:#888;
+}
+
+
+@media (max-width: 600px) {
+    h1{font-size: 30px;}
+    h1:before {
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .page_wrapper .content, .footer-content{
+        width: 95%;
+    }
+    .appliance-selector .category-selector a{
+        width: 32%;
+        float: left;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .appliance-selector .item-selector ul.item-list li {
+        font-size: 16px;
+        padding: 3%;
+        width: 92%;
+    }
+    .appliance-selector ul.item-list li:hover .more-info{display:none;}
+    .appliance-selector ul.item-list li:hover:after{right: 10px;}
+    .appliance-selector ul.item-list li .counter{right: 45px;}
 }

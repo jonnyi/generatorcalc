@@ -9,7 +9,7 @@ $(document).ready(function(){
     $.getJSON("appliances.json", function(result){
     	applicationObject = result
         $.each(result, function(i, field){
-            $(".appliance-selector .item-list").append("<li id='" + field.id + "' class='" + field.category + "'>"+ field.name + "</li>");
+            $(".appliance-selector .item-list").append("<li id='" + field.id + "' class='" + field.category + "'><span>"+ field.name + "</span><span class='counter'></span><span class='more-info'>Running: " + field.runningwattage + "watt<br>Starting: " + field.startingwattage + "watt</span></li>");
         });
 
 		//onclick of item adds id to global arr and revaluates results
@@ -62,19 +62,8 @@ $(document).ready(function(){
 			$( ".appliance-selector .item-list li").show();		
 		}
 	});
-	
 
 
-	function removeAppliance(applianceId){
-		var positionToRemove;
-		$.each(selectedAppliances, function(index, currentAppliance) {
-			if(currentAppliance.id == applianceId){
-				positionToRemove = index;	
-			}
-		});
-		selectedAppliances.splice(positionToRemove,1);
-		updateResults();
-	}
 	$("#manual-form").submit(function(e) {
 		addManual();
 		e.preventDefault();
@@ -106,9 +95,10 @@ function updateResults(){
 		recommendedWattage = ((totalRunningWattage - (highWattObj.runningwattage * highWattObj.quantity)) + (highWattObj.startingwattage * highWattObj.quantity));
 
 		//Render results
-		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th>Remove</th></tr></thead><tbody>");
+		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th class='center'>Remove</th></tr></thead><tbody>");
 		$.each(selectedAppliances, function(index, value) {
 			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td class='center'><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'>X</a></td></tr>");
+			$("#"+ value.id + " .counter").html(value.quantity);
 		});
 		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th></th></tr></tfoot>");
 		$("#recommended-wattage").html(recommendedWattage);
@@ -136,3 +126,14 @@ function addManual(){
 	updateResults();
 }
 
+function removeAppliance(applianceId){
+	var positionToRemove;
+	$.each(selectedAppliances, function(index, currentAppliance) {
+		if(currentAppliance.id == applianceId){
+			positionToRemove = index;	
+		}
+	});
+	selectedAppliances.splice(positionToRemove,1);
+	$("#"+ applianceId+ " .counter").html("");
+	updateResults();
+}

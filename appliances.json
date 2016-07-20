@@ -17,7 +17,7 @@
   },
   {
     "id": "item_3",
-    "name": "Circular Saw (Heavy Duty, 7 1/4 in.)",
+    "name": "Circular Saw",
     "runningwattage": 1400,
     "startingwattage": 2300,
     "category": "work",
@@ -57,7 +57,7 @@
   },
   {
     "id": "item_8",
-    "name": "Electric Chain Saw (14 inches, 2 hp)",
+    "name": "Electric Chain Saw",
     "runningwattage": 1100,
     "startingwattage": 1100,
     "category": "work",
@@ -82,7 +82,7 @@
   {
     "id": "item_11",
     "name": "Rotary hammer",
-    "runningwattage": 0,
+    "runningwattage": 120,
     "startingwattage": 1200,
     "category": "work",
     "icon": "na"
@@ -105,7 +105,7 @@
   },
   {
     "id": "item_14",
-    "name": "Industrial Motors, Capacitor Start Induction Run",
+    "name": "Industrial Motors",
     "runningwattage": 275,
     "startingwattage": 850,
     "category": "work",
@@ -113,7 +113,7 @@
   },
   {
     "id": "item_15",
-    "name": "Industrial Motors, Capacitor Start Capacitor Run",
+    "name": "Industrial Motors",
     "runningwattage": 275,
     "startingwattage": 600,
     "category": "work",
@@ -153,7 +153,7 @@
   },
   {
     "id": "item_20",
-    "name": "Portable Heater (kerosene, diesel fuel)",
+    "name": "Portable Heater",
     "runningwattage": 400,
     "startingwattage": 600,
     "category": "work",
@@ -177,7 +177,7 @@
   },
   {
     "id": "item_23",
-    "name": "Refrigerator or Freezer (Energy Star)",
+    "name": "Refrigerator or Freezer",
     "runningwattage": 192,
     "startingwattage": 1200,
     "category": "home",
@@ -201,7 +201,7 @@
   },
   {
     "id": "item_26",
-    "name": "Furnace Fan, gas or fuel oil",
+    "name": "Furnace Fan",
     "runningwattage": 300,
     "startingwattage": 500,
     "category": "home",
@@ -241,7 +241,7 @@
   },
   {
     "id": "item_31",
-    "name": "Electric Range (8-inch element)",
+    "name": "Electric Range",
     "runningwattage": 2100,
     "startingwattage": 2100,
     "category": "home",
@@ -281,7 +281,7 @@
   },
   {
     "id": "item_36",
-    "name": "Air Conditioner (10,000 BTU)",
+    "name": "Air Conditioner",
     "runningwattage": 1500,
     "startingwattage": 2200,
     "category": "home",
@@ -385,7 +385,7 @@
   },
   {
     "id": "item_49",
-    "name": "Air Conditioner (10,000 BTU)",
+    "name": "Air Conditioner",
     "runningwattage": 1500,
     "startingwattage": 2200,
     "category": "leisure",
