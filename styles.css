@@ -6,8 +6,23 @@ body{
     background: #fefefe;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
+
+body.body-overlay {
+    overflow:hidden;
+    z-index: 10000;
+}
+body.body-overlay:after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#000;
+    width:100%;
+    height: 20000px;
+    opacity: 0.7;
+}
+
 
 @font-face {
 	font-family: 'ElegantIcons';
@@ -17,7 +32,7 @@ body{
 }
 
 body,h1,html, input {
-    font-family: Raleway,sans-serif
+    font-family: Raleway,sans-serif;
 }
 h1:before{
     content:"";
@@ -78,7 +93,7 @@ h1 {
 .appliance-selector .category-selector a.home:after{content: "home";}
 .appliance-selector .category-selector a.leisure:after{content: "airport_shuttle";}
 .appliance-selector .category-selector a:hover{font-weight:700;}
-.appliance-selector .category-selector a.selected{font-weight:700;border-bottom-color: #fefefe;cursor:default;z-index: 1000;}
+.appliance-selector .category-selector a.selected{font-weight:700;border-bottom-color: #fefefe;cursor:default;/* z-index: 1000; */}
 
 .appliance-selector .category-selector a.selected:after, 
 .appliance-selector .category-selector a:hover:after{color: #0a0a0a; }
@@ -97,6 +112,12 @@ h1 {
     position: relative;
     float: left;
     height: 24px;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;  
+    user-select: none;           
 }
 .appliance-selector  ul.item-list li:hover{cursor: pointer;}
 .appliance-selector  ul.item-list li:hover:after{content:"+";height: 24px;width: 24px;line-height: 24px;text-align: center;font-size: 35px;font-family: Raleway,sans-serif;background-color: #eaeaea;color: #827f7f;position: absolute;right: 0;}
@@ -145,6 +166,19 @@ h1 {
     font-weight: 700;
 }
 
+.loadout #results-table .remove-all{
+    text-decoration: inherit;
+    font-weight: 700;
+    background-color: #c11b1b;
+    height: 30px;
+    color: #fefefe;
+    width: 88%;
+    text-align: center;
+    display: block;
+    line-height: 30px;
+    margin: 0 6% 0 6%;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -189,8 +223,25 @@ tbody tr:nth-child(even) {
     position: relative;
 }
 .recommendations p{text-align:center;}
-.recommendations .rec-wattage p, .recommendations .rec-max p{margin:0;} 
+.recommendations a{
+    color:initial;
+    text-decoration:none;
+    position: absolute;
+    right: 8px;
+    top: 13px;
+    line-height: 18px;
+    font-size: 16px;
+}
+.recommendations a span.whats-this{
+    display:none;
+}
+.recommendations a span.material-icons{
+    line-height: 16px;
+    font-size: 25px;
+    vertical-align: top;
+}
 
+.recommendations .rec-wattage p, .recommendations .rec-max p{margin:0;} 
 .recommendations .rec-wattage p{margin:0;font-weight: 700;}
 .recommendations .rec-wattage .result{
     text-align: center;
@@ -224,8 +275,64 @@ tbody tr:nth-child(even) {
     color:#888;
 }
 
+.moreinfo-overlay-wrapper{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 4000;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    display: none;
+}
+
+.moreinfo-overlay-wrapper .moreinfo-overlay{
+    width: 700px;
+    height: 350px;
+    padding: 20px;
+    margin: 50px auto 0 auto;
+    background-color: #fefefe;
+    padding: 30px;
+    z-index: 3000;
+    position: relative;
+}
+
+.moreinfo-overlay-wrapper .moreinfo-overlay a{
+    color: #0a0a0a;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.moreinfo-overlay h2{margin-top:0px;}
+.moreinfo-overlay h3{margin:0; padding:0;}
+.moreinfo-overlay p{margin-top:10px; font-size: 14px}
+
+.view-results{
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    width: 56px;
+    height: 100px;
+}
+.view-results a{
+    color: #0a0a0a;
+}
+.view-results a span{
+    float: left;
+    text-align: center;
+}
+.view-results a i {width: 100%;text-align: center;}
 
 @media (max-width: 600px) {
+
+    .moreinfo-overlay-wrapper .moreinfo-overlay {
+        width: 90%; 
+        padding:4%;
+        height:inherit
+    }
+    .moreinfo-overlay h2 {padding-right: 35px;}
+
     h1{font-size: 30px;}
     h1:before {
         background-size: 32px 32px;

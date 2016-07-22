@@ -69,7 +69,12 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 	});
-
+	
+	$(".recommendations a").hover(function() { 
+		$(".recommendations a .whats-this").fadeIn("fast"); 
+	}, function() { 
+		$(".recommendations a .whats-this").fadeOut("fast"); 
+	});	
 });
 
 function updateResults(){
@@ -97,10 +102,10 @@ function updateResults(){
 		//Render results
 		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th class='center'>Remove</th></tr></thead><tbody>");
 		$.each(selectedAppliances, function(index, value) {
-			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td class='center'><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'>X</a></td></tr>");
+			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td class='center'><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'><i class='material-icons'>clear</i></a></td></tr>");
 			$("#"+ value.id + " .counter").html(value.quantity);
 		});
-		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th></th></tr></tfoot>");
+		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th><a href='javascript:void(0)' onclick='removeAll();' class='remove-all'>Remove all</a></th></tr></tfoot>");
 		$("#recommended-wattage").html(recommendedWattage);
 		$("#maximum-wattage").html(totalStartingWattage);
 	} else {
@@ -136,4 +141,20 @@ function removeAppliance(applianceId){
 	selectedAppliances.splice(positionToRemove,1);
 	$("#"+ applianceId+ " .counter").html("");
 	updateResults();
+}
+
+function removeAll(){
+	selectedAppliances = [];
+	$(".counter").html("");
+	updateResults();
+}
+
+function toggleOverlay(overlaySelector){
+	var overlay = $(overlaySelector)[0];
+	if($(overlay).is(":visible")){
+		$(overlay).fadeOut("fast");
+	} else {
+		$(overlay).fadeIn("fast");
+	}
+	$("body").toggleClass("body-overlay");
 }
