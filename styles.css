@@ -34,7 +34,7 @@ body.body-overlay:after{
 body,h1,html, input {
     font-family: Raleway,sans-serif;
 }
-h1:before{
+h1.home-page:before{
     content:"";
     background-image: url('images/generator-logo.png');
     background-position: left center;
@@ -51,6 +51,11 @@ h1 {
     margin: 10px 0 10px 0;
     text-align: center;
 }
+.hero-content > h2 {
+    margin:15px 0 0 0;
+    font-weight:100;
+    text-align:center;
+}
 
 *,:after,:before {
     box-sizing: inherit;
@@ -59,9 +64,24 @@ h1 {
 .page_wrapper .header{
     background-color: #eee;
     padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
+    overflow:hidden;
 }
+.page_wrapper .header .logo{font-size: 16px;font-weight: 700;float: left;}
+.page_wrapper .header .menu{float:left}
+.page_wrapper .header .menu ul {margin:0; padding:0;}
+.page_wrapper .header .menu ul li{
+    list-style-type: none;
+    float:left;
+    margin: 0 0 0 35px;
+}
+.page_wrapper .header .menu ul li a{
+    text-decoration: inherit;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #c11b1b;
+}
+.page_wrapper .header .menu ul li a:hover{color: #770f0f;}
 .page_wrapper .content, .footer-content{
     width: 80%;
     margin: 0 auto;
@@ -143,6 +163,7 @@ h1 {
 }
 .appliance-selector .item-selector .custom #manual-form input {height: 22px;font-size: 11px;padding: 0 0 2px 5px;}
 .appliance-selector .item-selector .custom #manual-form input[type="submit"]{background-color: #c11b1b;border:none;height: 25px;color:#fefefe;padding: 0px 10px 2px 10px;margin: 0 0 0 5px;font-weight: 700;}
+.appliance-selector .item-selector .custom #manual-form input[type="submit"]:hover{background-color: #770f0f;}
 
 .loadout, .recommendations{
     display:none;
@@ -165,6 +186,7 @@ h1 {
     text-decoration: inherit;
     font-weight: 700;
 }
+.loadout #results-table .center .remove-appliance:hover i{font-weight: 900;}
 
 .loadout #results-table .remove-all{
     text-decoration: inherit;
@@ -178,6 +200,7 @@ h1 {
     line-height: 30px;
     margin: 0 6% 0 6%;
 }
+.loadout #results-table .remove-all:hover{background-color: #770f0f;}
 
 table {
     border-collapse: collapse;
@@ -289,7 +312,7 @@ tbody tr:nth-child(even) {
 
 .moreinfo-overlay-wrapper .moreinfo-overlay{
     width: 700px;
-    height: 350px;
+    height: 430px;
     padding: 20px;
     margin: 50px auto 0 auto;
     background-color: #fefefe;

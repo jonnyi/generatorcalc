@@ -74,6 +74,10 @@ $(document).ready(function(){
 		$(".recommendations a .whats-this").fadeIn("fast"); 
 	}, function() { 
 		$(".recommendations a .whats-this").fadeOut("fast"); 
+	});
+
+	jQuery("#about-link").click(function(){
+		$("html, body").animate({ scrollTop: $(".about").offset().top - 70}, "slow");
 	});	
 });
 
