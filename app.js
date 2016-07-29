@@ -89,7 +89,7 @@ function updateResults(){
 	var recommendedWattage = 0;
 
 	$("#results-table").empty();
-	$(".loadout, .recommendations").show();
+	$(".loadout, .recommendations, .button-container").show();
 	
 	if(selectedAppliances.length > 0){
 		$.each(selectedAppliances, function(index, currentAppliance) {
@@ -112,8 +112,9 @@ function updateResults(){
 		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th><a href='javascript:void(0)' onclick='removeAll();' class='remove-all'>Remove all</a></th></tr></tfoot>");
 		$("#recommended-wattage").html(recommendedWattage);
 		$("#maximum-wattage").html(totalStartingWattage);
+		updateAffiliateButton(recommendedWattage);
 	} else {
-		$(".loadout, .recommendations").hide();
+		$(".loadout, .recommendations, .button-container").hide();
 		$("body").animate({ scrollTop: 0 }, "slow");
 	}
 }
@@ -161,4 +162,24 @@ function toggleOverlay(overlaySelector){
 		$(overlay).fadeIn("fast");
 	}
 	$("body").toggleClass("body-overlay");
+}
+function returnWattBandObj(wattage){
+	var bandObj;
+		$.each(linkbands, function(index, currentBand) {
+			if(wattage <= currentBand.watthigh){
+				bandObj = currentBand;
+				return false;
+			}
+		});
+	return bandObj;
+}
+
+function updateAffiliateButton(currentRecommendedWattage){
+	var bandObj = returnWattBandObj(currentRecommendedWattage);
+	$("#aff-link").attr("href", bandObj.afflink);
+	$("#aff-link .low").html(bandObj.wattlow);
+	$("#aff-link .high").html(bandObj.watthigh);
+	if(bandObj.id == "band_10"){
+		$("#aff-link .tag-line").html("40,000watt+");
+	}
 }

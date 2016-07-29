@@ -244,6 +244,7 @@ tbody tr:nth-child(even) {
 
 .recommendations{
     position: relative;
+    margin: 0 0 40px 0;
 }
 .recommendations p{text-align:center;}
 .recommendations a{
@@ -272,6 +273,26 @@ tbody tr:nth-child(even) {
     font-weight: 100;
 }
 
+.button-container{display:none;}
+.button-container a#aff-link{
+    text-decoration: inherit;
+    font-weight: 700;
+    background-color: #c11b1b;
+    color: #fefefe;
+    width: 88%;
+    text-align: center;
+    display: block;
+    margin: 0 6% 0 6%;
+    font-size:24px;
+    padding: 5px 0 10px 0;
+}
+.button-container a#aff-link:hover{background-color: #770f0f;}
+.button-container a#aff-link .tag-line{
+    display:block;
+    line-height:16px;
+    font-size:16px;
+    font-weight:500;
+}
 
 .footer{
     border-bottom: 3px solid #eaeaea;
