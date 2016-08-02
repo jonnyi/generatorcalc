@@ -86,13 +86,14 @@ h1 {
     width: 80%;
     margin: 0 auto;
     padding: 30px 0 0 0;
+    max-width: 1280px;
 }
 
 .footer-content a{
     color:#c11b1b;
 }
 
-.hero-content{margin: 0 0 40px 0}
+.hero-content{margin: 0 0 40px 0;}
 .hero-content p {margin: 0 25%;text-align: center;}
 
 .appliance-selector{
@@ -175,18 +176,14 @@ h1 {
     width: 100%;
 }
 
-.loadout #results-table .center{
-    text-align:center;
-}
-
-.loadout #results-table .center .remove-appliance{
+.loadout #results-table .remove-appliance{
     color: #0a0a0a;
     width: 100%;
     display:inline-block;
     text-decoration: inherit;
     font-weight: 700;
 }
-.loadout #results-table .center .remove-appliance:hover i{font-weight: 900;}
+.loadout #results-table .remove-appliance:hover i{font-weight: 900;}
 
 .loadout #results-table .remove-all{
     text-decoration: inherit;
@@ -227,7 +224,10 @@ tfoot{border-top: 2px solid #e8e8e8;}
 tfoot td,tfoot th,thead td,thead th {
     padding: .5rem .625rem .625rem;
     font-weight: 700;
-    text-align: left
+    text-align: center;
+}
+tfoot td:first-child ,tfoot th:first-child ,thead td:first-child ,thead th:first-child {
+    text-align:left;
 }
 
 tbody tr:nth-child(even) {
@@ -236,6 +236,10 @@ tbody tr:nth-child(even) {
 
 caption, tbody td, tbody th {
     padding: .5rem .625rem .625rem;
+    text-align: center;
+}
+tbody td:first-child, tbody th:first-child {
+    text-align: left;
 }
 
 tbody tr:nth-child(even) {
@@ -369,7 +373,29 @@ tbody tr:nth-child(even) {
 .view-results a i {width: 100%;text-align: center;}
 
 @media (max-width: 600px) {
-
+    .page_wrapper .header .logo{
+        width:100%;
+        text-align: center;
+        margin: 5px 0 10px 0;
+    }
+    .page_wrapper .header .menu {width: 100%;}
+    .page_wrapper .header .menu ul li {
+        margin: 0;
+        text-align: center;
+        width: 33%;
+    }
+    h1.home-page{
+    line-height: 21px;
+    }
+    h1.home-page:before {
+        background-size: 30px 30px;
+        width: 30px;
+        height: 30px;
+        /* margin: 0; */
+    }    
+    .hero-content p {
+        margin: 0 5%;
+    }
     .moreinfo-overlay-wrapper .moreinfo-overlay {
         width: 90%; 
         padding:4%;
@@ -377,21 +403,26 @@ tbody tr:nth-child(even) {
     }
     .moreinfo-overlay h2 {padding-right: 35px;}
 
-    h1{font-size: 30px;}
+    h1{font-size: 22px;}
     h1:before {
         background-size: 32px 32px;
         width: 32px;
         height: 32px;
     }
-
     .page_wrapper .content, .footer-content{
-        width: 95%;
+        width: 94%;
+        padding-left: 3%;
+        padding-right: 3%;
+        margin: 0;
     }
     .appliance-selector .category-selector a{
-        width: 32%;
+        width: 28.6%;
         float: left;
-        text-align: center;
-        padding: 10px 0;
+        padding: 10px 0 10px 4%;
+    }
+    .appliance-selector .category-selector a:after {
+        right:inherit;
+        margin:0 0 0 5px;
     }
     .appliance-selector .item-selector ul.item-list li {
         font-size: 16px;
@@ -399,6 +430,36 @@ tbody tr:nth-child(even) {
         width: 92%;
     }
     .appliance-selector ul.item-list li:hover .more-info{display:none;}
+    .appliance-selector ul.item-list li:after{content:"+";height: 24px;width: 24px;line-height: 24px;text-align: center;font-size: 35px;font-family: Raleway,sans-serif;background-color: #eaeaea;color: #827f7f;position: absolute;right:10px;}
     .appliance-selector ul.item-list li:hover:after{right: 10px;}
     .appliance-selector ul.item-list li .counter{right: 45px;}
+    .appliance-selector .item-selector .custom #manual-form input {
+        height: 25px;
+        font-size: 16px;
+        float: left;
+        clear: left;
+        margin: 0 0 5px 0;
+    }
+    .appliance-selector .item-selector .custom #manual-form input[type="submit"]{
+        margin: 0;
+        padding: 10px;
+    }
+    .loadout{padding:0;}
+    .loadout #results-table .remove-all {
+        width:100%;
+        margin: 0;
+        font-size: 13px;
+    }
+    tfoot td,tfoot th,thead td,thead th {
+        padding: .2rem .2rem .3rem;
+        font-weight: 500;
+        text-align: left;
+    }
+    caption, tbody td, tbody th {
+        padding: .1rem .1rem .1rem;
+        font-size: 14px;
+    }
+    td.table-mobile-hide, th.table-mobile-hide {
+        display:none;
+    }
 }

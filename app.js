@@ -55,19 +55,14 @@ $(document).ready(function(){
 		$(".appliance-selector .category-selector a").removeClass("selected");
 		$(this).addClass("selected");
 		$(".appliance-selector .item-list li" ).hide();
-
-		if($( ".appliance-selector .item-list li." + classToShow).length != 0){
-			$( ".appliance-selector .item-list li." + classToShow).show();	
-		} else {
-			$( ".appliance-selector .item-list li").show();		
-		}
+		$(".appliance-selector .item-list li." + classToShow).show();
+		ga('send', 'event', 'Link click', 'Category Link - ' + classToShow);
 	});
 
 
 	$("#manual-form").submit(function(e) {
 		addManual();
-		e.preventDefault();
-		
+		e.preventDefault();	
 	});
 	
 	$(".recommendations a").hover(function() { 
@@ -76,8 +71,12 @@ $(document).ready(function(){
 		$(".recommendations a .whats-this").fadeOut("fast"); 
 	});
 
-	jQuery("#about-link").click(function(){
+	$("#about-link").click(function(){
 		$("html, body").animate({ scrollTop: $(".about").offset().top - 70}, "slow");
+		ga('send', 'event', 'Link click', 'About Link');
+	});
+	jQuery("body #aff-link").click(function(){
+		affLinkClick();
 	});	
 });
 
@@ -104,13 +103,14 @@ function updateResults(){
 		recommendedWattage = ((totalRunningWattage - (highWattObj.runningwattage * highWattObj.quantity)) + (highWattObj.startingwattage * highWattObj.quantity));
 
 		//Render results
-		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th>Starting Wattage</th><th>Running Wattage</th><th class='center'>Remove</th></tr></thead><tbody>");
+		$('#results-table').append("<thead><tr><th>Name</th><th>Quantity</th><th class='table-mobile-hide'>Starting Wattage</th><th>Running Wattage</th><th>Remove</th></tr></thead><tbody>");
 		$.each(selectedAppliances, function(index, value) {
-			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td class='center'><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'><i class='material-icons'>clear</i></a></td></tr>");
+			$('#results-table').append( "<tr><td>" + value.name + "</td><td>" + value.quantity + "</td><td class='table-mobile-hide'>" + (value.startingwattage * value.quantity) + "</td><td>" + (value.runningwattage * value.quantity) + "</td><td><a href='javascript:void(0)' data-removeid='" + value.id + "' class='remove-appliance'><i class='material-icons'>clear</i></a></td></tr>");
 			$("#"+ value.id + " .counter").html(value.quantity);
 		});
-		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th><a href='javascript:void(0)' onclick='removeAll();' class='remove-all'>Remove all</a></th></tr></tfoot>");
+		$('#results-table').append( "</tbody><tfoot><tr><th>Totals</th><th></th><th class='table-mobile-hide'>" + totalStartingWattage + "</th><th>" + totalRunningWattage + "</th><th><a href='javascript:void(0)' onclick='removeAll();' class='remove-all'>Remove all</a></th></tr></tfoot>");
 		$("#recommended-wattage").html(recommendedWattage);
+		$("#ga-wattage").val(recommendedWattage);
 		$("#maximum-wattage").html(totalStartingWattage);
 		updateAffiliateButton(recommendedWattage);
 	} else {
@@ -158,11 +158,14 @@ function toggleOverlay(overlaySelector){
 	var overlay = $(overlaySelector)[0];
 	if($(overlay).is(":visible")){
 		$(overlay).fadeOut("fast");
+		ga('send', 'event', 'Read more', 'Close');
 	} else {
 		$(overlay).fadeIn("fast");
+		ga('send', 'event', 'Read more', 'Open');
 	}
 	$("body").toggleClass("body-overlay");
 }
+
 function returnWattBandObj(wattage){
 	var bandObj;
 		$.each(linkbands, function(index, currentBand) {
@@ -182,4 +185,9 @@ function updateAffiliateButton(currentRecommendedWattage){
 	if(bandObj.id == "band_10"){
 		$("#aff-link .tag-line").html("40,000watt+");
 	}
+}
+
+function affLinkClick(){
+	var wattage = $("#ga-wattage").val();
+	ga('send', 'event', 'Affiliate Link', 'Wattage link', wattage);
 }
