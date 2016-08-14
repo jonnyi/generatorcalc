@@ -1,7 +1,7 @@
 <?php 
-	$page_title = "Generator Sizing Guide";
-	$page_description = "'What Size Generator Do I Need?'";
-	$page_keywords = "'Generators size, Generator choice, Power generator guide, Wattage advice'";
+	$page_title = "Standard Vs Inverter Generator";
+	$page_description = "'Guide on what the inverter generator is and what benefits it can bring'";
+	$page_keywords = "'Inverter generator explained'";
  	$path = $_SERVER['DOCUMENT_ROOT'];
  	$path .= "/header.php";
  	include_once($path);

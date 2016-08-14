@@ -156,10 +156,13 @@ function removeAll(){
 
 function toggleOverlay(overlaySelector){
 	var overlay = $(overlaySelector)[0];
+	var header = $(".header");
 	if($(overlay).is(":visible")){
+		$(header).show();
 		$(overlay).fadeOut("fast");
 		ga('send', 'event', 'Read more', 'Close');
 	} else {
+		$(header).hide();
 		$(overlay).fadeIn("fast");
 		ga('send', 'event', 'Read more', 'Open');
 	}

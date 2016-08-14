@@ -33,7 +33,7 @@
 	<body class=<?php echo("$page_class");?>>
 		<div class="page_wrapper">
 			<div class="header">
-				<div class="logo">Generator Calculator</div>
+				<div class="logo"><a href="/index.php">Generator Calculator</a></div>
 				<div class="menu">
 					<a href="javascript:void(0)" id="more-info" onclick="toggleMenu();">
 						<span>Menu</span>
