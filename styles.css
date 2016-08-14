@@ -8,6 +8,10 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }
 
+body a{
+    color: #0a0a0a;
+}
+
 body.body-overlay {
     overflow:hidden;
     z-index: 10000;
@@ -67,7 +71,8 @@ h1 {
     overflow:hidden;
 }
 .page_wrapper .header .logo{font-size: 16px;font-weight: 700;float: left;}
-.page_wrapper .header .menu{float:left}
+.page_wrapper .header .menu{float:left;}
+.page_wrapper .header .menu > a {display:none;}
 .page_wrapper .header .menu ul {margin:0; padding:0;}
 .page_wrapper .header .menu ul li{
     list-style-type: none;
@@ -83,10 +88,11 @@ h1 {
 }
 .page_wrapper .header .menu ul li a:hover{color: #770f0f;}
 .page_wrapper .content, .footer-content{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 30px 0 0 0;
-    max-width: 1280px;
+    max-width: 1000px;
+    overflow: hidden;
 }
 
 .footer-content a{
@@ -302,7 +308,7 @@ tbody tr:nth-child(even) {
     border-bottom: 3px solid #eaeaea;
     border-top: 3px solid #eee;
     background: #fafafa;
-    margin-top: 60px;
+    width: 100%;
 }
 
 .footer .about h4{
@@ -371,21 +377,65 @@ tbody tr:nth-child(even) {
     text-align: center;
 }
 .view-results a i {width: 100%;text-align: center;}
+.learning-center{
+}
+.learning-center h2{
+    text-transform: uppercase;
+    border: 2px solid #0A0A4C;
+    border-width: 2px 0;
+    text-align: center;
+    line-height: 2em;
+}
+.learning-center .page-section .guide-entry{
+    width: 45.50%;
+    margin: 3% 0 0 8%;
+    float: none;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+}
+.learning-center .page-section .guide-entry:nth-child(2n){margin-left: 0;}
+.learning-center .page-section .guide-entry a{font-size: 24px;font-weight: 500;line-height: 26px;}
+.learning-center .page-section .guide-entry p{font-size:18px;}
+
+
 
 @media (max-width: 600px) {
+    .page_wrapper .header {position:fixed;width: 100%;padding: 0;z-index: 10000;}
     .page_wrapper .header .logo{
         width:100%;
-        text-align: center;
-        margin: 5px 0 10px 0;
+        text-align: left;
+        margin: 20px 0 20px 15px;
     }
     .page_wrapper .header .menu {width: 100%;}
+    .page_wrapper .header .menu > a{
+        display:block;
+        text-decoration:none;
+        color: #0a0a0a;
+        position: absolute;
+        right: 10px;
+        background-color: #fff;
+        padding: 8px 10px;
+        border: 1px solid #cbcbcb;
+        top: 10px;
+     }
+    .page_wrapper .header .menu a span{line-height: 20px;vertical-align: middle;}
+    .page_wrapper .header .menu .menu-items {display: none;background-color: #fff;overflow: hidden;left: 0;top: 64px;border: 1px solid #efefef;border-width: 1px 0;}
     .page_wrapper .header .menu ul li {
         margin: 0;
-        text-align: center;
-        width: 33%;
+        width: 100%;
+        float: left;
+        clear: left;
+    }
+    .page_wrapper .header .menu ul li a{
+        color: #0A0A29;
+        width: 100%;
+        padding: 15px;
+        display: inline-block;
     }
     h1.home-page{
-    line-height: 21px;
+        line-height: 21px;
+        font-weight: 500;
     }
     h1.home-page:before {
         background-size: 30px 30px;
@@ -414,7 +464,9 @@ tbody tr:nth-child(even) {
         padding-left: 3%;
         padding-right: 3%;
         margin: 0;
+        padding-top: 94px;
     }
+    .footer-content{padding-top:0;}
     .appliance-selector .category-selector a{
         width: 28.6%;
         float: left;
@@ -425,7 +477,6 @@ tbody tr:nth-child(even) {
         margin:0 0 0 5px;
     }
     .appliance-selector .item-selector ul.item-list li {
-        font-size: 16px;
         padding: 3%;
         width: 92%;
     }
@@ -433,6 +484,8 @@ tbody tr:nth-child(even) {
     .appliance-selector ul.item-list li:after{content:"+";height: 24px;width: 24px;line-height: 24px;text-align: center;font-size: 35px;font-family: Raleway,sans-serif;background-color: #eaeaea;color: #827f7f;position: absolute;right:10px;}
     .appliance-selector ul.item-list li:hover:after{right: 10px;}
     .appliance-selector ul.item-list li .counter{right: 45px;}
+    .appliance-selector .item-selector ul.item-list li span{font-size:16px;}
+    .appliance-selector .item-selector .custom h3{font-size: 16px;}
     .appliance-selector .item-selector .custom #manual-form input {
         height: 25px;
         font-size: 16px;
@@ -453,7 +506,6 @@ tbody tr:nth-child(even) {
     tfoot td,tfoot th,thead td,thead th {
         padding: .2rem .2rem .3rem;
         font-weight: 500;
-        text-align: left;
     }
     caption, tbody td, tbody th {
         padding: .1rem .1rem .1rem;
@@ -462,4 +514,11 @@ tbody tr:nth-child(even) {
     td.table-mobile-hide, th.table-mobile-hide {
         display:none;
     }
+    .moreinfo-overlay p{font-size:16px;}
+
+    .learning-center .page-section .guide-entry{width:100%;margin: 10px 0 10px 0;}
+}
+@media (min-width: 900px) {
+
+
 }

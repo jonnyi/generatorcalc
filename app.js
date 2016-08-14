@@ -166,6 +166,17 @@ function toggleOverlay(overlaySelector){
 	$("body").toggleClass("body-overlay");
 }
 
+function toggleMenu(){
+	var menu = $(".menu .menu-items")[0];
+	if($(menu).is(":visible")){
+		$(menu).slideUp("fast");
+		$("body").toggleClass("body-overlay");
+	} else {
+		$("body").toggleClass("body-overlay");
+		$(menu).slideDown("fast");
+	}
+}
+
 function returnWattBandObj(wattage){
 	var bandObj;
 		$.each(linkbands, function(index, currentBand) {
